@@ -1,7 +1,7 @@
 import { useGlobalContext } from './context';
 import SetupForm from './SetupForm';
 import Loading from './Loading';
-// import Modal from './Modal';
+import Modal from './Modal';
 
 function App() {
   const {
@@ -28,7 +28,7 @@ function App() {
 
   return (
     <main>
-      {/* <Modal /> */}
+      <Modal />
       <section className="quiz">
         <p className="correct-answers">
           question {index} out of {questions.length}
