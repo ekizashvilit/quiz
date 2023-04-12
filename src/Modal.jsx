@@ -6,7 +6,7 @@ const Modal = () => {
   return (
     <div className={isModalOpen ? 'modal-container isOpen' : 'modal-container'}>
       <div className="modal-content">
-        <h2>{correct > questions.length / 2 && 'congrats'}</h2>
+        <h2>{correct > questions.length / 2 && 'congrats!'}</h2>
         <p>
           you answered {correct} question{correct > 1 && 's'} correctly
         </p>
