@@ -11,6 +11,7 @@ function App() {
     index,
     correct,
     nextQuestion,
+    checkAnswer,
   } = useGlobalContext();
 
   if (waiting) {
@@ -22,6 +23,7 @@ function App() {
   }
 
   const { question, incorrect_answers, correct_answer } = questions[index];
+
   const answers = [...incorrect_answers, correct_answer];
 
   return (
@@ -39,6 +41,7 @@ function App() {
                 <button
                   className="answer-btn"
                   key={index}
+                  onClick={() => checkAnswer(correct_answer === answer)}
                   dangerouslySetInnerHTML={{ __html: answer }}
                 ></button>
               );
@@ -46,7 +49,7 @@ function App() {
           </div>
         </article>
         <button className="next-question" onClick={nextQuestion}>
-          next question
+          skip question
         </button>
       </section>
     </main>
