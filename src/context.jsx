@@ -1,6 +1,12 @@
 import axios from 'axios';
 import { useContext, createContext, useState, useEffect } from 'react';
 
+const table = {
+  sports: 21,
+  history: 23,
+  politics: 24,
+};
+
 const API_ENDPOINT = 'https://opentdb.com/api.php?';
 
 const url = '';
@@ -84,6 +90,12 @@ const AppProvider = ({ children }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const { amount, difficulty, category } = quiz;
+
+    const url = `${API_ENDPOINT}amount=${amount}&category=${table[category]}&difficulty=${difficulty}&type=multiple`;
+
+    fetchQuestions(url);
   };
 
   return (
